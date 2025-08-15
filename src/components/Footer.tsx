@@ -1,5 +1,5 @@
 import { Mail, Phone, MapPin, Globe } from "lucide-react";
-import logo from "@/assets/logo.jpg";
+import logo from "@/assets/hstraders/logo.png";
 
 const Footer = () => {
   return (

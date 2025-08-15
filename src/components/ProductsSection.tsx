@@ -2,46 +2,73 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Star, Heart, Zap, Shield } from "lucide-react";
-import productsImage from "@/assets/products-showcase.jpg";
+import edibleImg from "@/assets/hstraders/product-edible.jpg";
+import bricksImg from "@/assets/hstraders/product-bricks.png";
+import licksImg from "@/assets/hstraders/product-licks.png";
+import lampsImg from "@/assets/hstraders/product-lamps.png";
+import heroProducts from "@/assets/hstraders/about-1.jpeg";
 
 const ProductsSection = () => {
   const products = [
     {
       title: "Edible Salt",
-      description: "100% natural, rich in essential minerals, and sourced directly from the Khewra Salt Mines. Known for its distinctive pink hue and purity, this salt enhances flavor while offering health benefits.",
-      features: ["Food Grade Certified", "Rich in Minerals", "Premium Quality", "Various Sizes"],
+      description:
+        "100% natural, rich in essential minerals, and sourced directly from the Khewra Salt Mines. Known for its distinctive pink hue and purity, this salt enhances flavor while offering health benefits.",
+      features: [
+        "Food Grade Certified",
+        "Rich in Minerals",
+        "Premium Quality",
+        "Various Sizes",
+      ],
       icon: Heart,
       rating: 5,
-      color: "from-pink-500 to-rose-500"
+      color: "from-pink-500 to-rose-500",
+      image: edibleImg,
     },
     {
       title: "Salt Bricks",
-      description: "Crafted from pure, natural pink salt, making them ideal for decorative and wellness applications. Perfect for salt walls, spas, and cooking surfaces.",
-      features: ["Decorative Use", "Spa Applications", "Cooking Surface", "Wellness Benefits"],
+      description:
+        "Crafted from pure, natural pink salt, making them ideal for decorative and wellness applications. Perfect for salt walls, spas, and cooking surfaces.",
+      features: [
+        "Decorative Use",
+        "Spa Applications",
+        "Cooking Surface",
+        "Wellness Benefits",
+      ],
       icon: Shield,
       rating: 5,
-      color: "from-orange-500 to-red-500"
+      color: "from-orange-500 to-red-500",
+      image: bricksImg,
     },
     {
       title: "Salt Licks",
-      description: "100% natural mineral-rich salt blocks, specially designed to support the health and well-being of livestock. Help improve hydration and promote healthy growth.",
-      features: ["Livestock Health", "Mineral Rich", "Natural Hydration", "Growth Support"],
+      description:
+        "100% natural mineral-rich salt blocks, specially designed to support the health and well-being of livestock. Help improve hydration and promote healthy growth.",
+      features: [
+        "Livestock Health",
+        "Mineral Rich",
+        "Natural Hydration",
+        "Growth Support",
+      ],
       icon: Zap,
       rating: 5,
-      color: "from-amber-500 to-orange-500"
+      color: "from-amber-500 to-orange-500",
+      image: licksImg,
     },
     {
       title: "Salt Lamps",
-      description: "Handcrafted from natural pink salt crystals, offering a warm, soothing glow. Known for their calming ambiance and potential air-purifying properties.",
+      description:
+        "Handcrafted from natural pink salt crystals, offering a warm, soothing glow. Known for their calming ambiance and potential air-purifying properties.",
       features: ["Air Purifying", "Calming Ambiance", "Handcrafted", "Unique Designs"],
       icon: Star,
       rating: 5,
-      color: "from-yellow-500 to-amber-500"
-    }
+      color: "from-yellow-500 to-amber-500",
+      image: lampsImg,
+    },
   ];
 
   return (
-    <section id="products" className="py-20 bg-background">
+    <section id="products" className="scroll-mt-24 animate-fade-in py-20 bg-background">
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto">
           {/* Section Header */}
@@ -58,7 +85,7 @@ const ProductsSection = () => {
           {/* Hero Product Image */}
           <div className="relative mb-16 rounded-3xl overflow-hidden">
             <img 
-              src={productsImage} 
+              src={heroProducts} 
               alt="Premium Himalayan Salt Products" 
               className="w-full h-64 md:h-96 object-cover"
             />
@@ -91,6 +118,12 @@ const ProductsSection = () => {
                   </div>
                 </CardHeader>
                 <CardContent className="space-y-4">
+                  <img
+                    src={product.image}
+                    alt={`${product.title} - Himalayan Pink Salt`}
+                    className="w-full h-36 object-cover rounded-xl"
+                    loading="lazy"
+                  />
                   <p className="text-sm text-muted-foreground leading-relaxed">
                     {product.description}
                   </p>

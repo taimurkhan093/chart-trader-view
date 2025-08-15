@@ -1,11 +1,11 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Target, Eye, Users, Globe } from "lucide-react";
-import founderImage from "@/assets/founder.jpg";
-import facilityImage from "@/assets/facility.jpg";
+import founderImage from "@/assets/hstraders/founder-1.jpg";
+import facilityImage from "@/assets/hstraders/about-1.jpeg";
 
 const MissionVision = () => {
   return (
-    <section id="mission" className="py-20 bg-gradient-to-b from-accent/10 to-background">
+    <section id="mission" className="scroll-mt-24 animate-fade-in py-20 bg-gradient-to-b from-accent/10 to-background">
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto">
           {/* Section Header */}

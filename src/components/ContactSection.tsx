@@ -6,7 +6,7 @@ import { Phone, Mail, MapPin, Clock, Send } from "lucide-react";
 
 const ContactSection = () => {
   return (
-    <section id="contact" className="py-20 bg-background">
+    <section id="contact" className="scroll-mt-24 animate-fade-in py-20 bg-background">
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto">
           {/* Section Header */}

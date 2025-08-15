@@ -1,4 +1,5 @@
 import { Card, CardContent } from "@/components/ui/card";
+import aboutImg from "@/assets/hstraders/about-2.jpeg";
 import { Mountain, Factory, Truck, Users } from "lucide-react";
 
 const AboutSection = () => {
@@ -26,7 +27,7 @@ const AboutSection = () => {
   ];
 
   return (
-    <section id="about" className="py-20 bg-gradient-to-b from-background to-accent/20">
+    <section id="about" className="scroll-mt-24 animate-fade-in py-20 bg-gradient-to-b from-background to-accent/20">
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto">
           {/* Section Header */}
@@ -63,30 +64,8 @@ const AboutSection = () => {
             </div>
 
             <div className="relative">
-              <div className="card-premium p-8 bg-gradient-to-br from-primary/5 to-primary/10">
-                <h4 className="text-xl font-bold mb-4 text-foreground">Why Choose Us?</h4>
-                <ul className="space-y-3">
-                  <li className="flex items-center space-x-3">
-                    <div className="w-2 h-2 bg-primary rounded-full"></div>
-                    <span>100% natural, unadulterated Himalayan pink salt</span>
-                  </li>
-                  <li className="flex items-center space-x-3">
-                    <div className="w-2 h-2 bg-primary rounded-full"></div>
-                    <span>Sourced from world-renowned Khewra Salt Mines</span>
-                  </li>
-                  <li className="flex items-center space-x-3">
-                    <div className="w-2 h-2 bg-primary rounded-full"></div>
-                    <span>International quality certifications</span>
-                  </li>
-                  <li className="flex items-center space-x-3">
-                    <div className="w-2 h-2 bg-primary rounded-full"></div>
-                    <span>Competitive pricing and bulk capabilities</span>
-                  </li>
-                  <li className="flex items-center space-x-3">
-                    <div className="w-2 h-2 bg-primary rounded-full"></div>
-                    <span>Expert consultation and customer service</span>
-                  </li>
-                </ul>
+              <div className="card-premium p-0 overflow-hidden"> 
+                <img src={aboutImg} alt="About H&S Traders - Himalayan Pink Salt" className="w-full h-80 object-cover" loading="lazy" />
               </div>
             </div>
           </div>

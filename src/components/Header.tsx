@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
-import { Menu, X, Phone, Mail } from "lucide-react";
-import logo from "@/assets/logo.jpg";
+import { Menu, X, Phone } from "lucide-react";
+import logo from "@/assets/hstraders/logo.png";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -18,11 +18,11 @@ const Header = () => {
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-8">
-            <a href="#home" className="text-foreground hover:text-primary transition-colors">Home</a>
-            <a href="#about" className="text-foreground hover:text-primary transition-colors">About</a>
-            <a href="#products" className="text-foreground hover:text-primary transition-colors">Products</a>
-            <a href="#mission" className="text-foreground hover:text-primary transition-colors">Mission</a>
-            <a href="#contact" className="text-foreground hover:text-primary transition-colors">Contact</a>
+            <a href="#home" className="story-link hover-scale text-foreground">Home</a>
+            <a href="#about" className="story-link hover-scale text-foreground">About</a>
+            <a href="#products" className="story-link hover-scale text-foreground">Products</a>
+            <a href="#mission" className="story-link hover-scale text-foreground">Mission</a>
+            <a href="#contact" className="story-link hover-scale text-foreground">Contact</a>
           </nav>
 
           {/* Contact Info & CTA */}
@@ -47,13 +47,13 @@ const Header = () => {
 
         {/* Mobile Menu */}
         {isMenuOpen && (
-          <div className="md:hidden absolute top-16 left-0 right-0 bg-background/95 backdrop-blur-lg border-b border-border/50 p-4">
+          <div className="md:hidden absolute top-16 left-0 right-0 bg-background/95 backdrop-blur-lg border-b border-border/50 p-4 animate-slide-in-right">
             <nav className="flex flex-col space-y-4">
-              <a href="#home" className="text-foreground hover:text-primary transition-colors py-2">Home</a>
-              <a href="#about" className="text-foreground hover:text-primary transition-colors py-2">About</a>
-              <a href="#products" className="text-foreground hover:text-primary transition-colors py-2">Products</a>
-              <a href="#mission" className="text-foreground hover:text-primary transition-colors py-2">Mission</a>
-              <a href="#contact" className="text-foreground hover:text-primary transition-colors py-2">Contact</a>
+              <a href="#home" className="story-link hover-scale text-foreground py-2">Home</a>
+              <a href="#about" className="story-link hover-scale text-foreground py-2">About</a>
+              <a href="#products" className="story-link hover-scale text-foreground py-2">Products</a>
+              <a href="#mission" className="story-link hover-scale text-foreground py-2">Mission</a>
+              <a href="#contact" className="story-link hover-scale text-foreground py-2">Contact</a>
               <div className="flex items-center space-x-2 text-sm text-muted-foreground py-2">
                 <Phone className="h-4 w-4" />
                 <span>(326) 123-5456</span>

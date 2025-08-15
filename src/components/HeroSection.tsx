@@ -1,16 +1,16 @@
 import { Button } from "@/components/ui/button";
 import { Star, Award, Shield, Globe } from "lucide-react";
-import heroImage from "@/assets/hero-salt.jpg";
+import heroImage from "@/assets/hstraders/about-2.jpeg";
 
 const HeroSection = () => {
   return (
-    <section id="home" className="relative min-h-screen flex items-center overflow-hidden">
+    <section id="home" className="relative min-h-screen flex items-center overflow-hidden animate-fade-in">
       {/* Background Image with Overlay */}
       <div 
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
         style={{ backgroundImage: `url(${heroImage})` }}
       >
-        <div className="absolute inset-0 bg-gradient-to-r from-background/95 via-background/85 to-background/75"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-background/98 via-background/90 to-background/80"></div>
       </div>
 
       <div className="relative z-10 container mx-auto px-4 py-20">
