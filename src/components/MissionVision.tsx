@@ -1,5 +1,7 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Target, Eye, Users, Globe } from "lucide-react";
+import founderImage from "@/assets/founder.jpg";
+import facilityImage from "@/assets/facility.jpg";
 
 const MissionVision = () => {
   return (
@@ -83,22 +85,70 @@ const MissionVision = () => {
             </Card>
           </div>
 
-          {/* Founder Section */}
-          <div className="text-center mb-16">
-            <h3 className="text-3xl font-bold mb-8">From Our Founder</h3>
-            <div className="max-w-4xl mx-auto">
-              <blockquote className="text-xl text-muted-foreground leading-relaxed italic mb-8">
-                "At H&S Trading Co., we are dedicated to extracting 100% natural, unadulterated 
-                Himalayan pink salt from the renowned Khewra Salt Mines in Pakistan. As the world's 
-                largest and only source of this rare pink salt, our mission is to make its natural 
-                goodness accessible to people across the globe."
-              </blockquote>
-              <p className="text-muted-foreground leading-relaxed">
-                Since day one, our goal has been simple: to produce high-quality Himalayan salt 
-                products and distribute them to both individuals and businesses worldwide. Through 
-                extensive research and by carefully analyzing customer needs, we have developed an 
-                exclusive range of products designed to meet diverse demands.
+          {/* Founder Section with Real Images */}
+          <div className="mb-16">
+            <h3 className="text-3xl font-bold mb-8 text-center">Meet Our Founder</h3>
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+              <div className="space-y-6">
+                <div className="relative">
+                  <img 
+                    src={founderImage} 
+                    alt="H&S Traders Founder" 
+                    className="w-full max-w-md mx-auto rounded-2xl shadow-medium"
+                  />
+                </div>
+                <div className="text-center lg:text-left">
+                  <h4 className="text-2xl font-bold mb-2">CEO & Founder</h4>
+                  <p className="text-primary font-semibold">H&S Trading Co.</p>
+                </div>
+              </div>
+              <div className="space-y-6">
+                <blockquote className="text-lg text-muted-foreground leading-relaxed italic border-l-4 border-primary pl-6">
+                  "At H&S Trading Co., we are dedicated to extracting 100% natural, unadulterated 
+                  Himalayan pink salt from the renowned Khewra Salt Mines in Pakistan. As the world's 
+                  largest and only source of this rare pink salt, our mission is to make its natural 
+                  goodness accessible to people across the globe."
+                </blockquote>
+                <p className="text-muted-foreground leading-relaxed">
+                  Since day one, our goal has been simple: to produce high-quality Himalayan salt 
+                  products and distribute them to both individuals and businesses worldwide. Through 
+                  extensive research and by carefully analyzing customer needs, we have developed an 
+                  exclusive range of products designed to meet diverse demands.
+                </p>
+                <p className="text-muted-foreground leading-relaxed">
+                  For us, it's not just about profit—we aim to be your partner in success. With a 
+                  focus on mutual growth, profitability, and guaranteed customer satisfaction, we are 
+                  here to help you thrive every step of the way.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          {/* Our Facility */}
+          <div className="mb-16">
+            <div className="text-center mb-8">
+              <h3 className="text-3xl font-bold mb-4">Our State-of-the-Art Facility</h3>
+              <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+                Located at the heart of the Khewra Salt Mines, our facility combines traditional 
+                mining expertise with modern processing technology.
               </p>
+            </div>
+            <div className="relative rounded-3xl overflow-hidden">
+              <img 
+                src={facilityImage} 
+                alt="H&S Traders Facility at Khewra Salt Mines" 
+                className="w-full h-64 md:h-96 object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent"></div>
+              <div className="absolute bottom-8 left-8 right-8">
+                <h4 className="text-2xl md:text-3xl font-bold mb-2">
+                  World-Class Processing & Quality Control
+                </h4>
+                <p className="text-muted-foreground max-w-2xl">
+                  Our facility at Khewra Salt Mines ensures every product meets international 
+                  standards with rigorous quality control and modern processing techniques.
+                </p>
+              </div>
             </div>
           </div>
 

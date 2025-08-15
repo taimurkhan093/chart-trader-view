@@ -33,6 +33,7 @@ const ContactSection = () => {
                 <CardContent>
                   <p className="text-muted-foreground mb-2">Call us directly</p>
                   <p className="text-lg font-semibold">(326) 123-5456</p>
+                  <p className="text-sm text-muted-foreground">Available 24/7 for urgent inquiries</p>
                 </CardContent>
               </Card>
 
@@ -46,6 +47,7 @@ const ContactSection = () => {
                 <CardContent>
                   <p className="text-muted-foreground mb-2">Send us a message</p>
                   <p className="text-lg font-semibold">info@hstraderspk.com</p>
+                  <p className="text-sm text-muted-foreground">We respond within 24 hours</p>
                 </CardContent>
               </Card>
 
@@ -59,6 +61,7 @@ const ContactSection = () => {
                 <CardContent>
                   <p className="text-muted-foreground mb-2">Visit our facility</p>
                   <p className="text-lg font-semibold">Khewra Salt Mines, Pakistan</p>
+                  <p className="text-sm text-muted-foreground">Factory tours available by appointment</p>
                 </CardContent>
               </Card>
 
