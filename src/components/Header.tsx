@@ -41,6 +41,7 @@ const Header = () => {
             <a href="#home" onClick={(e) => handleNavClick(e, "home")} className="story-link hover-scale text-foreground cursor-pointer">Home</a>
             <a href="#about" onClick={(e) => handleNavClick(e, "about")} className="story-link hover-scale text-foreground cursor-pointer">About</a>
             <a href="#products" onClick={(e) => handleNavClick(e, "products")} className="story-link hover-scale text-foreground cursor-pointer">Products</a>
+            <a href="#gallery" onClick={(e) => handleNavClick(e, "gallery")} className="story-link hover-scale text-foreground cursor-pointer">Gallery</a>
             <a href="#mission" onClick={(e) => handleNavClick(e, "mission")} className="story-link hover-scale text-foreground cursor-pointer">Mission</a>
             <a href="#contact" onClick={(e) => handleNavClick(e, "contact")} className="story-link hover-scale text-foreground cursor-pointer">Contact</a>
           </nav>
@@ -72,6 +73,7 @@ const Header = () => {
               <a href="#home" onClick={(e) => handleNavClick(e, "home")} className="story-link hover-scale text-foreground py-2 cursor-pointer">Home</a>
               <a href="#about" onClick={(e) => handleNavClick(e, "about")} className="story-link hover-scale text-foreground py-2 cursor-pointer">About</a>
               <a href="#products" onClick={(e) => handleNavClick(e, "products")} className="story-link hover-scale text-foreground py-2 cursor-pointer">Products</a>
+              <a href="#gallery" onClick={(e) => handleNavClick(e, "gallery")} className="story-link hover-scale text-foreground py-2 cursor-pointer">Gallery</a>
               <a href="#mission" onClick={(e) => handleNavClick(e, "mission")} className="story-link hover-scale text-foreground py-2 cursor-pointer">Mission</a>
               <a href="#contact" onClick={(e) => handleNavClick(e, "contact")} className="story-link hover-scale text-foreground py-2 cursor-pointer">Contact</a>
               <div className="flex items-center space-x-2 text-sm text-muted-foreground py-2">
