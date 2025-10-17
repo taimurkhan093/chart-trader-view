@@ -51,7 +51,7 @@ const Header = () => {
               <Phone className="h-4 w-4" />
               <span>(326) 123-5456</span>
             </div>
-            <Button variant="default" className="btn-hero">
+            <Button variant="default" className="btn-hero" onClick={() => scrollToSection("contact")}>
               Get Quote
             </Button>
           </div>
@@ -78,7 +78,7 @@ const Header = () => {
                 <Phone className="h-4 w-4" />
                 <span>(326) 123-5456</span>
               </div>
-              <Button variant="default" className="btn-hero w-full">
+              <Button variant="default" className="btn-hero w-full" onClick={() => scrollToSection("contact")}>
                 Get Quote
               </Button>
             </nav>
