@@ -148,40 +148,67 @@ const ProductsSection = () => {
             <p className="text-muted-foreground mb-8 max-w-2xl mx-auto">
               Click on any certificate to view the full documentation
             </p>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-8 items-center">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
               <button 
                 onClick={() => window.open('/certificates/HACCP.pdf', '_blank')}
-                className="flex flex-col items-center space-y-2 hover:opacity-100 opacity-60 transition-opacity cursor-pointer group"
+                className="group cursor-pointer"
               >
-                <div className="w-16 h-16 bg-success/10 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform">
-                  <span className="text-success font-bold">HACCP</span>
+                <div className="bg-card border-2 border-border rounded-2xl overflow-hidden hover:border-primary transition-all duration-300 hover:shadow-lg">
+                  <div className="aspect-[3/4] bg-muted flex items-center justify-center p-4">
+                    <embed 
+                      src="/certificates/HACCP.pdf" 
+                      type="application/pdf" 
+                      className="w-full h-full pointer-events-none"
+                    />
+                  </div>
+                  <div className="p-4 text-center">
+                    <div className="w-12 h-12 bg-success/10 rounded-full flex items-center justify-center mx-auto mb-2 group-hover:scale-110 transition-transform">
+                      <span className="text-success font-bold text-sm">HACCP</span>
+                    </div>
+                    <span className="text-sm text-muted-foreground">Food Safety</span>
+                  </div>
                 </div>
-                <span className="text-sm text-muted-foreground">Food Safety</span>
               </button>
               <button 
                 onClick={() => window.open('/certificates/HALAL.pdf', '_blank')}
-                className="flex flex-col items-center space-y-2 hover:opacity-100 opacity-60 transition-opacity cursor-pointer group"
+                className="group cursor-pointer"
               >
-                <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform">
-                  <span className="text-primary font-bold">HALAL</span>
+                <div className="bg-card border-2 border-border rounded-2xl overflow-hidden hover:border-primary transition-all duration-300 hover:shadow-lg">
+                  <div className="aspect-[3/4] bg-muted flex items-center justify-center p-4">
+                    <embed 
+                      src="/certificates/HALAL.pdf" 
+                      type="application/pdf" 
+                      className="w-full h-full pointer-events-none"
+                    />
+                  </div>
+                  <div className="p-4 text-center">
+                    <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-2 group-hover:scale-110 transition-transform">
+                      <span className="text-primary font-bold text-sm">HALAL</span>
+                    </div>
+                    <span className="text-sm text-muted-foreground">Certified</span>
+                  </div>
                 </div>
-                <span className="text-sm text-muted-foreground">Certified</span>
               </button>
               <button 
                 onClick={() => window.open('/certificates/ISO.pdf', '_blank')}
-                className="flex flex-col items-center space-y-2 hover:opacity-100 opacity-60 transition-opacity cursor-pointer group"
+                className="group cursor-pointer"
               >
-                <div className="w-16 h-16 bg-success/10 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform">
-                  <span className="text-success font-bold">ISO</span>
+                <div className="bg-card border-2 border-border rounded-2xl overflow-hidden hover:border-primary transition-all duration-300 hover:shadow-lg">
+                  <div className="aspect-[3/4] bg-muted flex items-center justify-center p-4">
+                    <embed 
+                      src="/certificates/ISO.pdf" 
+                      type="application/pdf" 
+                      className="w-full h-full pointer-events-none"
+                    />
+                  </div>
+                  <div className="p-4 text-center">
+                    <div className="w-12 h-12 bg-success/10 rounded-full flex items-center justify-center mx-auto mb-2 group-hover:scale-110 transition-transform">
+                      <span className="text-success font-bold text-sm">ISO</span>
+                    </div>
+                    <span className="text-sm text-muted-foreground">Quality</span>
+                  </div>
                 </div>
-                <span className="text-sm text-muted-foreground">Quality</span>
               </button>
-              <div className="flex flex-col items-center space-y-2 opacity-60">
-                <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center">
-                  <span className="text-primary font-bold">FDA</span>
-                </div>
-                <span className="text-sm text-muted-foreground">Approved</span>
-              </div>
             </div>
           </div>
 

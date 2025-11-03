@@ -1,6 +1,7 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Target, Eye, Users, Globe } from "lucide-react";
 import founderImage from "@/assets/hstraders/founder-1.jpg";
+import coFounderImage from "@/assets/hstraders/founder-2.jpg";
 import facilityImage from "@/assets/hstraders/about-1.jpeg";
 
 const MissionVision = () => {
@@ -87,8 +88,9 @@ const MissionVision = () => {
 
           {/* Founder Section with Real Images */}
           <div className="mb-16">
-            <h3 className="text-3xl font-bold mb-8 text-center">Meet Our Founder</h3>
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <h3 className="text-3xl font-bold mb-8 text-center">Meet Our Leadership</h3>
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start mb-12">
+              {/* Founder */}
               <div className="space-y-6">
                 <div className="relative">
                   <img 
@@ -97,30 +99,47 @@ const MissionVision = () => {
                     className="w-full max-w-md mx-auto rounded-2xl shadow-medium"
                   />
                 </div>
-                <div className="text-center lg:text-left">
+                <div className="text-center">
                   <h4 className="text-2xl font-bold mb-2">CEO & Founder</h4>
                   <p className="text-primary font-semibold">H&S Trading Co.</p>
                 </div>
               </div>
+              
+              {/* Co-Founder */}
               <div className="space-y-6">
-                <blockquote className="text-lg text-muted-foreground leading-relaxed italic border-l-4 border-primary pl-6">
-                  "At H&S Trading Co., we are dedicated to extracting 100% natural, unadulterated 
-                  Himalayan pink salt from the renowned Khewra Salt Mines in Pakistan. As the world's 
-                  largest and only source of this rare pink salt, our mission is to make its natural 
-                  goodness accessible to people across the globe."
-                </blockquote>
-                <p className="text-muted-foreground leading-relaxed">
-                  Since day one, our goal has been simple: to produce high-quality Himalayan salt 
-                  products and distribute them to both individuals and businesses worldwide. Through 
-                  extensive research and by carefully analyzing customer needs, we have developed an 
-                  exclusive range of products designed to meet diverse demands.
-                </p>
-                <p className="text-muted-foreground leading-relaxed">
-                  For us, it's not just about profit—we aim to be your partner in success. With a 
-                  focus on mutual growth, profitability, and guaranteed customer satisfaction, we are 
-                  here to help you thrive every step of the way.
-                </p>
+                <div className="relative">
+                  <img 
+                    src={coFounderImage} 
+                    alt="H&S Traders Co-Founder" 
+                    className="w-full max-w-md mx-auto rounded-2xl shadow-medium"
+                  />
+                </div>
+                <div className="text-center">
+                  <h4 className="text-2xl font-bold mb-2">Co-Founder</h4>
+                  <p className="text-primary font-semibold">H&S Trading Co.</p>
+                </div>
               </div>
+            </div>
+            
+            {/* Founder Quote and Description */}
+            <div className="space-y-6">
+              <blockquote className="text-lg text-muted-foreground leading-relaxed italic border-l-4 border-primary pl-6">
+                "At H&S Trading Co., we are dedicated to extracting 100% natural, unadulterated 
+                Himalayan pink salt from the renowned Khewra Salt Mines in Pakistan. As the world's 
+                largest and only source of this rare pink salt, our mission is to make its natural 
+                goodness accessible to people across the globe."
+              </blockquote>
+              <p className="text-muted-foreground leading-relaxed">
+                Since day one, our goal has been simple: to produce high-quality Himalayan salt 
+                products and distribute them to both individuals and businesses worldwide. Through 
+                extensive research and by carefully analyzing customer needs, we have developed an 
+                exclusive range of products designed to meet diverse demands.
+              </p>
+              <p className="text-muted-foreground leading-relaxed">
+                For us, it's not just about profit—we aim to be your partner in success. With a 
+                focus on mutual growth, profitability, and guaranteed customer satisfaction, we are 
+                here to help you thrive every step of the way.
+              </p>
             </div>
           </div>
 

@@ -59,6 +59,14 @@ const HeroSection = () => {
             <Button variant="outline" size="lg" className="text-lg px-8 py-4 border-2 hover:bg-primary/10">
               Request Wholesale Quote
             </Button>
+            <Button 
+              variant="outline" 
+              size="lg" 
+              className="text-lg px-8 py-4 border-2 hover:bg-primary/10"
+              onClick={() => window.open('/catalogue.pdf', '_blank')}
+            >
+              Download Catalog
+            </Button>
           </div>
 
           {/* Stats */}
