@@ -145,31 +145,62 @@ const ProductsSection = () => {
           {/* Certifications */}
           <div className="text-center">
             <h3 className="text-2xl font-bold mb-8">Quality Certifications</h3>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-8 items-center opacity-60">
-              <div className="flex flex-col items-center space-y-2">
-                <div className="w-16 h-16 bg-success/10 rounded-full flex items-center justify-center">
+            <p className="text-muted-foreground mb-8 max-w-2xl mx-auto">
+              Click on any certificate to view the full documentation
+            </p>
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-8 items-center">
+              <button 
+                onClick={() => window.open('/certificates/HACCP.pdf', '_blank')}
+                className="flex flex-col items-center space-y-2 hover:opacity-100 opacity-60 transition-opacity cursor-pointer group"
+              >
+                <div className="w-16 h-16 bg-success/10 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform">
                   <span className="text-success font-bold">HACCP</span>
                 </div>
                 <span className="text-sm text-muted-foreground">Food Safety</span>
-              </div>
-              <div className="flex flex-col items-center space-y-2">
-                <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center">
+              </button>
+              <button 
+                onClick={() => window.open('/certificates/HALAL.pdf', '_blank')}
+                className="flex flex-col items-center space-y-2 hover:opacity-100 opacity-60 transition-opacity cursor-pointer group"
+              >
+                <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform">
                   <span className="text-primary font-bold">HALAL</span>
                 </div>
                 <span className="text-sm text-muted-foreground">Certified</span>
-              </div>
-              <div className="flex flex-col items-center space-y-2">
-                <div className="w-16 h-16 bg-success/10 rounded-full flex items-center justify-center">
+              </button>
+              <button 
+                onClick={() => window.open('/certificates/ISO.pdf', '_blank')}
+                className="flex flex-col items-center space-y-2 hover:opacity-100 opacity-60 transition-opacity cursor-pointer group"
+              >
+                <div className="w-16 h-16 bg-success/10 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform">
                   <span className="text-success font-bold">ISO</span>
                 </div>
                 <span className="text-sm text-muted-foreground">Quality</span>
-              </div>
-              <div className="flex flex-col items-center space-y-2">
+              </button>
+              <div className="flex flex-col items-center space-y-2 opacity-60">
                 <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center">
                   <span className="text-primary font-bold">FDA</span>
                 </div>
                 <span className="text-sm text-muted-foreground">Approved</span>
               </div>
+            </div>
+          </div>
+
+          {/* Lab Report Section */}
+          <div className="mt-16 text-center">
+            <div className="bg-gradient-to-r from-primary/10 to-primary-glow/10 rounded-3xl p-8">
+              <h3 className="text-2xl font-bold mb-3">Laboratory Test Report</h3>
+              <p className="text-muted-foreground mb-6 max-w-2xl mx-auto">
+                View our comprehensive laboratory analysis report confirming the purity 
+                and quality of our Himalayan pink salt products.
+              </p>
+              <Button 
+                variant="outline" 
+                size="lg"
+                onClick={() => window.open('/LAB_REPORT.pdf', '_blank')}
+                className="border-2 hover:bg-primary/10"
+              >
+                View Lab Test Report
+              </Button>
             </div>
           </div>
         </div>

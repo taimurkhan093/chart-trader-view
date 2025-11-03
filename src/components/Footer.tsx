@@ -1,4 +1,5 @@
 import { Mail, Phone, MapPin, Globe } from "lucide-react";
+import { Button } from "@/components/ui/button";
 import logo from "@/assets/hstraders/logo.png";
 
 const Footer = () => {
@@ -92,31 +93,57 @@ const Footer = () => {
           {/* Certifications */}
           <div className="border-t border-border/50 pt-8 mb-8">
             <h4 className="text-lg font-semibold mb-6 text-center">Quality Certifications</h4>
-            <div className="flex justify-center items-center space-x-12 opacity-60">
-              <div className="text-center">
-                <div className="w-12 h-12 bg-success/10 rounded-full flex items-center justify-center mx-auto mb-2">
+            <div className="flex justify-center items-center space-x-12">
+              <button 
+                onClick={() => window.open('/certificates/HACCP.pdf', '_blank')}
+                className="text-center hover:opacity-100 opacity-60 transition-opacity cursor-pointer group"
+              >
+                <div className="w-12 h-12 bg-success/10 rounded-full flex items-center justify-center mx-auto mb-2 group-hover:scale-110 transition-transform">
                   <span className="text-success font-bold text-xs">HACCP</span>
                 </div>
                 <span className="text-xs text-muted-foreground">Food Safety</span>
-              </div>
-              <div className="text-center">
-                <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-2">
+              </button>
+              <button 
+                onClick={() => window.open('/certificates/HALAL.pdf', '_blank')}
+                className="text-center hover:opacity-100 opacity-60 transition-opacity cursor-pointer group"
+              >
+                <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-2 group-hover:scale-110 transition-transform">
                   <span className="text-primary font-bold text-xs">HALAL</span>
                 </div>
                 <span className="text-xs text-muted-foreground">Certified</span>
-              </div>
-              <div className="text-center">
-                <div className="w-12 h-12 bg-success/10 rounded-full flex items-center justify-center mx-auto mb-2">
+              </button>
+              <button 
+                onClick={() => window.open('/certificates/ISO.pdf', '_blank')}
+                className="text-center hover:opacity-100 opacity-60 transition-opacity cursor-pointer group"
+              >
+                <div className="w-12 h-12 bg-success/10 rounded-full flex items-center justify-center mx-auto mb-2 group-hover:scale-110 transition-transform">
                   <span className="text-success font-bold text-xs">ISO</span>
                 </div>
                 <span className="text-xs text-muted-foreground">Quality</span>
-              </div>
-              <div className="text-center">
+              </button>
+              <div className="text-center opacity-60">
                 <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-2">
                   <span className="text-primary font-bold text-xs">FDA</span>
                 </div>
                 <span className="text-xs text-muted-foreground">Approved</span>
               </div>
+            </div>
+          </div>
+
+          {/* Download Catalog CTA */}
+          <div className="border-t border-border/50 pt-8 mb-8">
+            <div className="text-center">
+              <h4 className="text-lg font-semibold mb-3">Download Our Product Catalog</h4>
+              <p className="text-sm text-muted-foreground mb-4 max-w-md mx-auto">
+                Get detailed information about all our products, pricing, and specifications
+              </p>
+              <Button 
+                variant="outline" 
+                onClick={() => window.open('/catalogue.pdf', '_blank')}
+                className="border-2 hover:bg-primary/10"
+              >
+                Download Catalog
+              </Button>
             </div>
           </div>
 

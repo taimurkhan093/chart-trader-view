@@ -186,7 +186,12 @@ const ContactSection = () => {
                 <Button size="lg" className="btn-hero px-8">
                   Request Wholesale Quote
                 </Button>
-                <Button variant="outline" size="lg" className="px-8 border-2 hover:bg-primary/10">
+                <Button 
+                  variant="outline" 
+                  size="lg" 
+                  className="px-8 border-2 hover:bg-primary/10"
+                  onClick={() => window.open('/catalogue.pdf', '_blank')}
+                >
                   Download Product Catalog
                 </Button>
               </div>
