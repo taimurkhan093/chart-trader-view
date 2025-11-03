@@ -92,11 +92,11 @@ const MissionVision = () => {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start mb-12">
               {/* Founder */}
               <div className="space-y-6">
-                <div className="relative">
+                <div className="relative aspect-[3/4] max-w-md mx-auto">
                   <img 
                     src={founderImage} 
                     alt="H&S Traders Founder" 
-                    className="w-full max-w-md mx-auto rounded-2xl shadow-medium"
+                    className="w-full h-full object-cover rounded-2xl shadow-medium"
                   />
                 </div>
                 <div className="text-center">
@@ -107,11 +107,11 @@ const MissionVision = () => {
               
               {/* Co-Founder */}
               <div className="space-y-6">
-                <div className="relative">
+                <div className="relative aspect-[3/4] max-w-md mx-auto">
                   <img 
                     src={coFounderImage} 
                     alt="H&S Traders Co-Founder" 
-                    className="w-full max-w-md mx-auto rounded-2xl shadow-medium"
+                    className="w-full h-full object-cover rounded-2xl shadow-medium"
                   />
                 </div>
                 <div className="text-center">
