@@ -8,16 +8,15 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
 import { useToast } from "@/hooks/use-toast";
-import { supabase } from "@/integrations/supabase/client";
 import { useState } from "react";
 
 const formSchema = z.object({
-  firstName: z.string().trim().min(1, "First name is required").max(50, "First name must be less than 50 characters"),
-  lastName: z.string().trim().min(1, "Last name is required").max(50, "Last name must be less than 50 characters"),
-  email: z.string().trim().email("Invalid email address").max(255, "Email must be less than 255 characters"),
-  company: z.string().trim().min(1, "Company name is required").max(100, "Company name must be less than 100 characters"),
-  subject: z.string().trim().min(1, "Subject is required").max(200, "Subject must be less than 200 characters"),
-  message: z.string().trim().min(10, "Message must be at least 10 characters").max(2000, "Message must be less than 2000 characters"),
+  firstName: z.string().trim().min(1, "First name is required").max(50),
+  lastName: z.string().trim().min(1, "Last name is required").max(50),
+  email: z.string().trim().email("Invalid email address").max(255),
+  company: z.string().trim().min(1).max(100),
+  subject: z.string().trim().min(1).max(200),
+  message: z.string().trim().min(10).max(2000),
 });
 
 const ContactSection = () => {
@@ -39,11 +38,18 @@ const ContactSection = () => {
   const onSubmit = async (values: z.infer<typeof formSchema>) => {
     setIsSubmitting(true);
     try {
-      const { error } = await supabase.functions.invoke("send-contact-email", {
-        body: values,
-      });
+      const response = await fetch(
+        "https://send-contact-email.taimurkhan093.workers.dev/",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(values),
+        }
+      );
 
-      if (error) throw error;
+      if (!response.ok) throw new Error("Failed to send message");
 
       toast({
         title: "Message sent!",
@@ -52,7 +58,7 @@ const ContactSection = () => {
 
       form.reset();
     } catch (error) {
-      console.error("Error sending message:", error);
+      console.error("Error sending email:", error);
       toast({
         title: "Error",
         description: "Failed to send message. Please try again or email us directly.",
@@ -67,7 +73,6 @@ const ContactSection = () => {
     <section id="contact" className="scroll-mt-24 animate-fade-in py-20 bg-background">
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto">
-          {/* Section Header */}
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold mb-6">
               Get In <span className="text-gradient">Touch</span>
@@ -79,7 +84,6 @@ const ContactSection = () => {
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
-            {/* Contact Information */}
             <div className="lg:col-span-1 space-y-8">
               <Card className="card-premium border-0">
                 <CardHeader>
@@ -140,7 +144,6 @@ const ContactSection = () => {
               </Card>
             </div>
 
-            {/* Contact Form */}
             <div className="lg:col-span-2">
               <Card className="card-premium border-0">
                 <CardHeader>
@@ -256,7 +259,6 @@ const ContactSection = () => {
             </div>
           </div>
 
-          {/* CTA Section */}
           <div className="mt-20 text-center">
             <div className="bg-gradient-to-r from-primary/10 to-primary-glow/10 rounded-3xl p-12">
               <h3 className="text-3xl font-bold mb-4">Ready to Start Trading?</h3>
@@ -279,6 +281,7 @@ const ContactSection = () => {
               </div>
             </div>
           </div>
+
         </div>
       </div>
     </section>
