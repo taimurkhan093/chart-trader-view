@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Menu, X, Phone } from "lucide-react";
-import logo from "@/assets/hstraders/navbar_logo.png";
+import logo from "@/assets/hstraders/navbar_logo_header.png";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -9,7 +9,8 @@ const Header = () => {
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
     if (element) {
-      const offset = 80; // Header height offset
+      const header = document.querySelector("header");
+      const offset = header instanceof HTMLElement ? header.offsetHeight : 80;
       const elementPosition = element.getBoundingClientRect().top;
       const offsetPosition = elementPosition + window.pageYOffset - offset;
 
@@ -17,7 +18,7 @@ const Header = () => {
         top: offsetPosition,
         behavior: "smooth"
       });
-      setIsMenuOpen(false); // Close mobile menu after clicking
+      setIsMenuOpen(false);
     }
   };
 
@@ -29,13 +30,15 @@ const Header = () => {
   return (
     <header className="fixed top-0 w-full z-50 bg-background/80 backdrop-blur-lg border-b border-border/50">
       <div className="container mx-auto px-4">
-        <div className="flex items-center justify-between h-20">
-          {/* Logo */}
-          <div className="flex items-center">
-            <img src={logo} alt="H&S Traders" className="w-[180px] h-[60px] object-contain" />
+        <div className="flex items-center justify-between h-20 md:h-24">
+          <div className="flex items-center shrink-0">
+            <img
+              src={logo}
+              alt="H&S Traders"
+              className="w-[200px] sm:w-[220px] md:w-[260px] lg:w-[280px] h-auto max-h-[72px] md:max-h-[88px] object-contain"
+            />
           </div>
 
-          {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-8">
             <a href="#home" onClick={(e) => handleNavClick(e, "home")} className="story-link hover-scale text-foreground cursor-pointer">Home</a>
             <a href="#about" onClick={(e) => handleNavClick(e, "about")} className="story-link hover-scale text-foreground cursor-pointer">About</a>
@@ -45,8 +48,7 @@ const Header = () => {
             <a href="#contact" onClick={(e) => handleNavClick(e, "contact")} className="story-link hover-scale text-foreground cursor-pointer">Contact</a>
           </nav>
 
-          {/* Contact Info & CTA */}
-          <div className="hidden lg:flex items-center space-x-4">
+          <div className="hidden lg:flex items-center space-x-4 shrink-0">
             <div className="flex items-center space-x-2 text-sm text-muted-foreground">
               <Phone className="h-4 w-4" />
               <span>+92 316 0612341</span>
@@ -56,18 +58,16 @@ const Header = () => {
             </Button>
           </div>
 
-          {/* Mobile Menu Button */}
           <button
-            className="md:hidden p-2"
+            className="md:hidden p-2 shrink-0"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
           >
             {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
           </button>
         </div>
 
-        {/* Mobile Menu */}
         {isMenuOpen && (
-          <div className="md:hidden absolute top-16 left-0 right-0 bg-background/95 backdrop-blur-lg border-b border-border/50 p-4 animate-slide-in-right">
+          <div className="md:hidden absolute top-20 left-0 right-0 bg-background/95 backdrop-blur-lg border-b border-border/50 p-4 animate-slide-in-right">
             <nav className="flex flex-col space-y-4">
               <a href="#home" onClick={(e) => handleNavClick(e, "home")} className="story-link hover-scale text-foreground py-2 cursor-pointer">Home</a>
               <a href="#about" onClick={(e) => handleNavClick(e, "about")} className="story-link hover-scale text-foreground py-2 cursor-pointer">About</a>
