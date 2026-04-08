@@ -94,7 +94,7 @@ const ContactSection = () => {
                 </CardHeader>
                 <CardContent>
                   <p className="text-muted-foreground mb-2">Call us directly</p>
-                  <p className="text-lg font-semibold">(326) 123-5456</p>
+                  <p className="text-lg font-semibold">+92 316 0612341</p>
                   <p className="text-sm text-muted-foreground">Available 24/7 for urgent inquiries</p>
                 </CardContent>
               </Card>
@@ -122,7 +122,7 @@ const ContactSection = () => {
                 </CardHeader>
                 <CardContent>
                   <p className="text-muted-foreground mb-2">Visit our facility</p>
-                  <p className="text-lg font-semibold">Khewra Salt Mines, Pakistan</p>
+                  <p className="text-lg font-semibold">House No.B-38, Mir Colony, Tando Jam, District Hyderabad (Rural), Sindh, Pakistan</p>
                   <p className="text-sm text-muted-foreground">Factory tours available by appointment</p>
                 </CardContent>
               </Card>

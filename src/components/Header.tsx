@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Menu, X, Phone } from "lucide-react";
-import logo from "@/assets/hstraders/logo.png";
+import logo from "@/assets/hstraders/navbar_logo.png";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -31,9 +31,8 @@ const Header = () => {
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <div className="flex items-center space-x-3">
-            <img src={logo} alt="H&S Traders" className="h-10 w-10 rounded-lg" />
-            <div className="text-xl font-bold text-gradient">H&S TRADERS</div>
+          <div className="flex items-center">
+            <img src={logo} alt="H&S Traders" className="h-12 md:h-14 w-auto" />
           </div>
 
           {/* Desktop Navigation */}
@@ -50,7 +49,7 @@ const Header = () => {
           <div className="hidden lg:flex items-center space-x-4">
             <div className="flex items-center space-x-2 text-sm text-muted-foreground">
               <Phone className="h-4 w-4" />
-              <span>(326) 123-5456</span>
+              <span>+92 316 0612341</span>
             </div>
             <Button variant="default" className="btn-hero" onClick={() => scrollToSection("contact")}>
               Get Quote
@@ -78,7 +77,7 @@ const Header = () => {
               <a href="#contact" onClick={(e) => handleNavClick(e, "contact")} className="story-link hover-scale text-foreground py-2 cursor-pointer">Contact</a>
               <div className="flex items-center space-x-2 text-sm text-muted-foreground py-2">
                 <Phone className="h-4 w-4" />
-                <span>(326) 123-5456</span>
+                <span>+92 316 0612341</span>
               </div>
               <Button variant="default" className="btn-hero w-full" onClick={() => scrollToSection("contact")}>
                 Get Quote
