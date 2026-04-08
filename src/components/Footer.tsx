@@ -1,6 +1,6 @@
 import { Mail, Phone, MapPin, Globe } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import logo from "@/assets/hstraders/logo.png";
+import logo from "@/assets/hstraders/navbar_logo.png";
 
 const Footer = () => {
   return (
@@ -11,9 +11,8 @@ const Footer = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
             {/* Company Info */}
             <div className="lg:col-span-2 space-y-6">
-              <div className="flex items-center space-x-3">
-                <img src={logo} alt="H&S Traders" className="h-12 w-12 rounded-lg" />
-                <div className="text-2xl font-bold text-gradient">H&S TRADERS</div>
+              <div className="flex items-center">
+                <img src={logo} alt="H&S Traders" className="h-14 w-auto" />
               </div>
               <p className="text-muted-foreground leading-relaxed max-w-md">
                 Your trusted partner in premium Himalayan pink salt. Sourcing the finest 
@@ -22,7 +21,7 @@ const Footer = () => {
               <div className="space-y-3">
                 <div className="flex items-center space-x-3 text-sm">
                   <Phone className="h-4 w-4 text-primary" />
-                  <span>(326) 123-5456</span>
+                  <span>+92 316 0612341</span>
                 </div>
                 <div className="flex items-center space-x-3 text-sm">
                   <Mail className="h-4 w-4 text-primary" />
@@ -30,7 +29,7 @@ const Footer = () => {
                 </div>
                 <div className="flex items-center space-x-3 text-sm">
                   <MapPin className="h-4 w-4 text-primary" />
-                  <span>Khewra Salt Mines, Pakistan</span>
+                  <span>House No.B-38, Mir Colony, Tando Jam, District Hyderabad (Rural), Sindh, Pakistan</span>
                 </div>
               </div>
             </div>
