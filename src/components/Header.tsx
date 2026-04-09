@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Menu, X, Phone } from "lucide-react";
-import logo from "@/assets/hstraders/navbar_logo_header.png";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -32,11 +31,7 @@ const Header = () => {
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-20 md:h-24">
           <div className="flex items-center shrink-0">
-            <img
-              src={logo}
-              alt="H&S Traders"
-              className="w-[200px] sm:w-[220px] md:w-[260px] lg:w-[280px] h-auto max-h-[72px] md:max-h-[88px] object-contain"
-            />
+            <span className="text-2xl md:text-3xl font-bold text-foreground tracking-tight">H&S TRADERS</span>
           </div>
 
           <nav className="hidden md:flex items-center space-x-8">
