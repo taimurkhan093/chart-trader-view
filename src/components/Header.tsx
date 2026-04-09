@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Menu, X, Phone } from "lucide-react";
-import logo from "@/assets/hstraders/navbar_logo_header.png";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
