@@ -92,7 +92,7 @@ const Footer = () => {
           {/* Certifications */}
           <div className="border-t border-border/50 pt-8 mb-8">
             <h4 className="text-lg font-semibold mb-6 text-center">Quality Certifications</h4>
-            <div className="flex justify-center items-center space-x-12">
+            <div className="flex justify-center items-center flex-wrap gap-8">
               <button 
                 onClick={() => window.open('/certificates/HACCP.pdf', '_blank')}
                 className="text-center hover:opacity-100 opacity-60 transition-opacity cursor-pointer group"
@@ -120,12 +120,24 @@ const Footer = () => {
                 </div>
                 <span className="text-xs text-muted-foreground">Quality</span>
               </button>
-              <div className="text-center opacity-60">
-                <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-2">
-                  <span className="text-primary font-bold text-xs">FDA</span>
+              <button 
+                onClick={() => window.open('/certificates/KOSHER.pdf', '_blank')}
+                className="text-center hover:opacity-100 opacity-60 transition-opacity cursor-pointer group"
+              >
+                <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-2 group-hover:scale-110 transition-transform">
+                  <span className="text-primary font-bold text-xs">KOSHER</span>
                 </div>
-                <span className="text-xs text-muted-foreground">Approved</span>
-              </div>
+                <span className="text-xs text-muted-foreground">Certified</span>
+              </button>
+              <button 
+                onClick={() => window.open('/certificates/TAXPAYER.pdf', '_blank')}
+                className="text-center hover:opacity-100 opacity-60 transition-opacity cursor-pointer group"
+              >
+                <div className="w-12 h-12 bg-success/10 rounded-full flex items-center justify-center mx-auto mb-2 group-hover:scale-110 transition-transform">
+                  <span className="text-success font-bold text-xs">TAX</span>
+                </div>
+                <span className="text-xs text-muted-foreground">Taxpayer</span>
+              </button>
             </div>
           </div>
 
