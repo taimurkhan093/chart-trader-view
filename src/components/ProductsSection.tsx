@@ -148,67 +148,36 @@ const ProductsSection = () => {
             <p className="text-muted-foreground mb-8 max-w-2xl mx-auto">
               Click on any certificate to view the full documentation
             </p>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
-              <button 
-                onClick={() => window.open('/certificates/HACCP.pdf', '_blank')}
-                className="group cursor-pointer"
-              >
-                <div className="bg-card border-2 border-border rounded-2xl overflow-hidden hover:border-primary transition-all duration-300 hover:shadow-lg">
-                  <div className="aspect-[3/4] bg-muted flex items-center justify-center p-4">
-                    <embed 
-                      src="/certificates/HACCP.pdf" 
-                      type="application/pdf" 
-                      className="w-full h-full pointer-events-none"
-                    />
-                  </div>
-                  <div className="p-4 text-center">
-                    <div className="w-12 h-12 bg-success/10 rounded-full flex items-center justify-center mx-auto mb-2 group-hover:scale-110 transition-transform">
-                      <span className="text-success font-bold text-sm">HACCP</span>
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 max-w-5xl mx-auto">
+              {[
+                { file: 'HACCP.pdf', label: 'HACCP', subtitle: 'Food Safety', colorClass: 'bg-success/10 text-success' },
+                { file: 'HALAL.pdf', label: 'HALAL', subtitle: 'Certified', colorClass: 'bg-primary/10 text-primary' },
+                { file: 'ISO.pdf', label: 'ISO', subtitle: 'Quality', colorClass: 'bg-success/10 text-success' },
+                { file: 'KOSHER.pdf', label: 'KOSHER', subtitle: 'Certified', colorClass: 'bg-primary/10 text-primary' },
+                { file: 'TAXPAYER.pdf', label: 'TAX', subtitle: 'Compliant', colorClass: 'bg-success/10 text-success' },
+              ].map((cert) => (
+                <button
+                  key={cert.file}
+                  onClick={() => window.open(`/certificates/${cert.file}`, '_blank')}
+                  className="group cursor-pointer"
+                >
+                  <div className="bg-card border-2 border-border rounded-2xl overflow-hidden hover:border-primary transition-all duration-300 hover:shadow-lg">
+                    <div className="aspect-[3/4] bg-muted flex items-center justify-center p-4">
+                      <embed
+                        src={`/certificates/${cert.file}`}
+                        type="application/pdf"
+                        className="w-full h-full pointer-events-none"
+                      />
                     </div>
-                    <span className="text-sm text-muted-foreground">Food Safety</span>
-                  </div>
-                </div>
-              </button>
-              <button 
-                onClick={() => window.open('/certificates/HALAL.pdf', '_blank')}
-                className="group cursor-pointer"
-              >
-                <div className="bg-card border-2 border-border rounded-2xl overflow-hidden hover:border-primary transition-all duration-300 hover:shadow-lg">
-                  <div className="aspect-[3/4] bg-muted flex items-center justify-center p-4">
-                    <embed 
-                      src="/certificates/HALAL.pdf" 
-                      type="application/pdf" 
-                      className="w-full h-full pointer-events-none"
-                    />
-                  </div>
-                  <div className="p-4 text-center">
-                    <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-2 group-hover:scale-110 transition-transform">
-                      <span className="text-primary font-bold text-sm">HALAL</span>
+                    <div className="p-4 text-center">
+                      <div className={`w-12 h-12 ${cert.colorClass} rounded-full flex items-center justify-center mx-auto mb-2 group-hover:scale-110 transition-transform`}>
+                        <span className="font-bold text-xs">{cert.label}</span>
+                      </div>
+                      <span className="text-sm text-muted-foreground">{cert.subtitle}</span>
                     </div>
-                    <span className="text-sm text-muted-foreground">Certified</span>
                   </div>
-                </div>
-              </button>
-              <button 
-                onClick={() => window.open('/certificates/ISO.pdf', '_blank')}
-                className="group cursor-pointer"
-              >
-                <div className="bg-card border-2 border-border rounded-2xl overflow-hidden hover:border-primary transition-all duration-300 hover:shadow-lg">
-                  <div className="aspect-[3/4] bg-muted flex items-center justify-center p-4">
-                    <embed 
-                      src="/certificates/ISO.pdf" 
-                      type="application/pdf" 
-                      className="w-full h-full pointer-events-none"
-                    />
-                  </div>
-                  <div className="p-4 text-center">
-                    <div className="w-12 h-12 bg-success/10 rounded-full flex items-center justify-center mx-auto mb-2 group-hover:scale-110 transition-transform">
-                      <span className="text-success font-bold text-sm">ISO</span>
-                    </div>
-                    <span className="text-sm text-muted-foreground">Quality</span>
-                  </div>
-                </div>
-              </button>
+                </button>
+              ))}
             </div>
           </div>
 
