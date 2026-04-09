@@ -7,6 +7,7 @@ import bricksImg from "@/assets/hstraders/product-bricks.png";
 import licksImg from "@/assets/hstraders/product-licks.png";
 import lampsImg from "@/assets/hstraders/product-lamps.png";
 import heroProducts from "@/assets/hstraders/about-1.jpeg";
+import { certifications } from "@/lib/certifications";
 
 const ProductsSection = () => {
   const products = [
@@ -77,16 +78,16 @@ const ProductsSection = () => {
               Our Premium <span className="text-gradient">Product Range</span>
             </h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-              Discover our comprehensive collection of high-quality Himalayan pink salt products, 
+              Discover our comprehensive collection of high-quality Himalayan pink salt products,
               each carefully crafted to meet international standards and diverse business needs.
             </p>
           </div>
 
           {/* Hero Product Image */}
           <div className="relative mb-16 rounded-3xl overflow-hidden">
-            <img 
-              src={heroProducts} 
-              alt="Premium Himalayan Salt Products" 
+            <img
+              src={heroProducts}
+              alt="Premium Himalayan Salt Products"
               className="w-full h-64 md:h-96 object-cover"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent"></div>
@@ -95,7 +96,7 @@ const ProductsSection = () => {
                 Premium Quality, Naturally Pure
               </h3>
               <p className="text-muted-foreground max-w-2xl">
-                Every product is sourced from the pristine Khewra Salt Mines and processed 
+                Every product is sourced from the pristine Khewra Salt Mines and processed
                 with the highest quality standards to ensure purity and excellence.
               </p>
             </div>
@@ -149,16 +150,10 @@ const ProductsSection = () => {
               Click on any certificate to view the full documentation
             </p>
             <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 max-w-5xl mx-auto">
-              {[
-                { file: 'HACCP', label: 'HACCP', subtitle: 'Food Safety', colorClass: 'bg-success/10 text-success' },
-                { file: 'HALAL', label: 'HALAL', subtitle: 'Certified', colorClass: 'bg-primary/10 text-primary' },
-                { file: 'ISO', label: 'ISO', subtitle: 'Quality', colorClass: 'bg-success/10 text-success' },
-                { file: 'KOSHER', label: 'KOSHER', subtitle: 'Certified', colorClass: 'bg-primary/10 text-primary' },
-                { file: 'TAXPAYER', label: 'TAX', subtitle: 'Compliant', colorClass: 'bg-success/10 text-success' },
-              ].map((cert) => (
+              {certifications.map((cert) => (
                 <a
-                  key={cert.file}
-                  href={`/certificates/${cert.file}.pdf`}
+                  key={cert.fileBase}
+                  href={cert.pdfSrc}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="group cursor-pointer"
@@ -166,10 +161,11 @@ const ProductsSection = () => {
                   <div className="bg-card border-2 border-border rounded-2xl overflow-hidden hover:border-primary transition-all duration-300 hover:shadow-lg">
                     <div className="aspect-[3/4] bg-muted flex items-center justify-center p-2">
                       <img
-                        src={`/certificates/${cert.file}_thumb-1.jpg`}
-                        alt={`${cert.label} Certificate`}
+                        src={cert.thumbnailSrc}
+                        alt={`${cert.label} certificate preview`}
                         className="w-full h-full object-contain rounded-lg"
                         loading="lazy"
+                        decoding="async"
                       />
                     </div>
                     <div className="p-4 text-center">
@@ -189,11 +185,11 @@ const ProductsSection = () => {
             <div className="bg-gradient-to-r from-primary/10 to-primary-glow/10 rounded-3xl p-8">
               <h3 className="text-2xl font-bold mb-3">Laboratory Test Report</h3>
               <p className="text-muted-foreground mb-6 max-w-2xl mx-auto">
-                View our comprehensive laboratory analysis report confirming the purity 
+                View our comprehensive laboratory analysis report confirming the purity
                 and quality of our Himalayan pink salt products.
               </p>
-              <Button 
-                variant="outline" 
+              <Button
+                variant="outline"
                 size="lg"
                 onClick={() => window.open('/LAB_REPORT.pdf', '_blank')}
                 className="border-2 hover:bg-primary/10"
