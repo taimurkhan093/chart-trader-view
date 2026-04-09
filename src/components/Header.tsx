@@ -29,7 +29,7 @@ const Header = () => {
   return (
     <header className="fixed top-0 w-full z-50 bg-background/80 backdrop-blur-lg border-b border-border/50">
       <div className="container mx-auto px-4">
-        <div className="flex items-center justify-between h-20 md:h-24">
+        <div className="flex items-center justify-between h-16">
           <div className="flex items-center shrink-0">
             <span className="text-2xl md:text-3xl font-bold text-foreground tracking-tight">H&S TRADERS</span>
           </div>
