@@ -1,0 +1,42 @@
+export const certifications = [
+  {
+    fileBase: "HACCP",
+    label: "HACCP",
+    subtitle: "Food Safety",
+    colorClass: "bg-success/10 text-success",
+    thumbnailSrc: "/certificates/HACCP-thumb.webp",
+    pdfSrc: "/certificates/HACCP-web.pdf",
+  },
+  {
+    fileBase: "HALAL",
+    label: "HALAL",
+    subtitle: "Certified",
+    colorClass: "bg-primary/10 text-primary",
+    thumbnailSrc: "/certificates/HALAL-thumb.webp",
+    pdfSrc: "/certificates/HALAL-web.pdf",
+  },
+  {
+    fileBase: "ISO",
+    label: "ISO",
+    subtitle: "Quality",
+    colorClass: "bg-success/10 text-success",
+    thumbnailSrc: "/certificates/ISO-thumb.webp",
+    pdfSrc: "/certificates/ISO-web.pdf",
+  },
+  {
+    fileBase: "KOSHER",
+    label: "KOSHER",
+    subtitle: "Certified",
+    colorClass: "bg-primary/10 text-primary",
+    thumbnailSrc: "/certificates/KOSHER-thumb.webp",
+    pdfSrc: "/certificates/KOSHER-web.pdf",
+  },
+  {
+    fileBase: "TAXPAYER",
+    label: "TAX",
+    subtitle: "Taxpayer",
+    colorClass: "bg-success/10 text-success",
+    thumbnailSrc: "/certificates/TAXPAYER-thumb.webp",
+    pdfSrc: "/certificates/TAXPAYER-web.pdf",
+  },
+] as const;

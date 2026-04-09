@@ -1,6 +1,7 @@
 import { Mail, Phone, MapPin, Globe } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import logo from "@/assets/hstraders/navbar_logo.png";
+import { certifications } from "@/lib/certifications";
 
 const Footer = () => {
   return (
@@ -15,7 +16,7 @@ const Footer = () => {
                 <img src={logo} alt="H&S Traders" className="h-14 w-auto" />
               </div>
               <p className="text-muted-foreground leading-relaxed max-w-md">
-                Your trusted partner in premium Himalayan pink salt. Sourcing the finest 
+                Your trusted partner in premium Himalayan pink salt. Sourcing the finest
                 natural salt products from the world-renowned Khewra Salt Mines since 2023.
               </p>
               <div className="space-y-3">
@@ -93,51 +94,20 @@ const Footer = () => {
           <div className="border-t border-border/50 pt-8 mb-8">
             <h4 className="text-lg font-semibold mb-6 text-center">Quality Certifications</h4>
             <div className="flex justify-center items-center flex-wrap gap-8">
-              <button 
-                onClick={() => window.open('/certificates/HACCP.pdf', '_blank')}
-                className="text-center hover:opacity-100 opacity-60 transition-opacity cursor-pointer group"
-              >
-                <div className="w-12 h-12 bg-success/10 rounded-full flex items-center justify-center mx-auto mb-2 group-hover:scale-110 transition-transform">
-                  <span className="text-success font-bold text-xs">HACCP</span>
-                </div>
-                <span className="text-xs text-muted-foreground">Food Safety</span>
-              </button>
-              <button 
-                onClick={() => window.open('/certificates/HALAL.pdf', '_blank')}
-                className="text-center hover:opacity-100 opacity-60 transition-opacity cursor-pointer group"
-              >
-                <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-2 group-hover:scale-110 transition-transform">
-                  <span className="text-primary font-bold text-xs">HALAL</span>
-                </div>
-                <span className="text-xs text-muted-foreground">Certified</span>
-              </button>
-              <button 
-                onClick={() => window.open('/certificates/ISO.pdf', '_blank')}
-                className="text-center hover:opacity-100 opacity-60 transition-opacity cursor-pointer group"
-              >
-                <div className="w-12 h-12 bg-success/10 rounded-full flex items-center justify-center mx-auto mb-2 group-hover:scale-110 transition-transform">
-                  <span className="text-success font-bold text-xs">ISO</span>
-                </div>
-                <span className="text-xs text-muted-foreground">Quality</span>
-              </button>
-              <button 
-                onClick={() => window.open('/certificates/KOSHER.pdf', '_blank')}
-                className="text-center hover:opacity-100 opacity-60 transition-opacity cursor-pointer group"
-              >
-                <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-2 group-hover:scale-110 transition-transform">
-                  <span className="text-primary font-bold text-xs">KOSHER</span>
-                </div>
-                <span className="text-xs text-muted-foreground">Certified</span>
-              </button>
-              <button 
-                onClick={() => window.open('/certificates/TAXPAYER.pdf', '_blank')}
-                className="text-center hover:opacity-100 opacity-60 transition-opacity cursor-pointer group"
-              >
-                <div className="w-12 h-12 bg-success/10 rounded-full flex items-center justify-center mx-auto mb-2 group-hover:scale-110 transition-transform">
-                  <span className="text-success font-bold text-xs">TAX</span>
-                </div>
-                <span className="text-xs text-muted-foreground">Taxpayer</span>
-              </button>
+              {certifications.map((cert) => (
+                <a
+                  key={cert.fileBase}
+                  href={cert.pdfSrc}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-center hover:opacity-100 opacity-60 transition-opacity cursor-pointer group"
+                >
+                  <div className={`w-12 h-12 ${cert.colorClass} rounded-full flex items-center justify-center mx-auto mb-2 group-hover:scale-110 transition-transform`}>
+                    <span className="font-bold text-xs">{cert.label}</span>
+                  </div>
+                  <span className="text-xs text-muted-foreground">{cert.subtitle}</span>
+                </a>
+              ))}
             </div>
           </div>
 
@@ -148,8 +118,8 @@ const Footer = () => {
               <p className="text-sm text-muted-foreground mb-4 max-w-md mx-auto">
                 Get detailed information about all our products, pricing, and specifications
               </p>
-              <Button 
-                variant="outline" 
+              <Button
+                variant="outline"
                 onClick={() => window.open('/catalogue.pdf', '_blank')}
                 className="border-2 hover:bg-primary/10"
               >
