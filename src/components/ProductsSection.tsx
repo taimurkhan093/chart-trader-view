@@ -150,23 +150,26 @@ const ProductsSection = () => {
             </p>
             <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 max-w-5xl mx-auto">
               {[
-                { file: 'HACCP.pdf', label: 'HACCP', subtitle: 'Food Safety', colorClass: 'bg-success/10 text-success' },
-                { file: 'HALAL.pdf', label: 'HALAL', subtitle: 'Certified', colorClass: 'bg-primary/10 text-primary' },
-                { file: 'ISO.pdf', label: 'ISO', subtitle: 'Quality', colorClass: 'bg-success/10 text-success' },
-                { file: 'KOSHER.pdf', label: 'KOSHER', subtitle: 'Certified', colorClass: 'bg-primary/10 text-primary' },
-                { file: 'TAXPAYER.pdf', label: 'TAX', subtitle: 'Compliant', colorClass: 'bg-success/10 text-success' },
+                { file: 'HACCP', label: 'HACCP', subtitle: 'Food Safety', colorClass: 'bg-success/10 text-success' },
+                { file: 'HALAL', label: 'HALAL', subtitle: 'Certified', colorClass: 'bg-primary/10 text-primary' },
+                { file: 'ISO', label: 'ISO', subtitle: 'Quality', colorClass: 'bg-success/10 text-success' },
+                { file: 'KOSHER', label: 'KOSHER', subtitle: 'Certified', colorClass: 'bg-primary/10 text-primary' },
+                { file: 'TAXPAYER', label: 'TAX', subtitle: 'Compliant', colorClass: 'bg-success/10 text-success' },
               ].map((cert) => (
-                <button
+                <a
                   key={cert.file}
-                  onClick={() => window.open(`/certificates/${cert.file}`, '_blank')}
+                  href={`/certificates/${cert.file}.pdf`}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="group cursor-pointer"
                 >
                   <div className="bg-card border-2 border-border rounded-2xl overflow-hidden hover:border-primary transition-all duration-300 hover:shadow-lg">
-                    <div className="aspect-[3/4] bg-muted flex items-center justify-center p-4">
-                      <embed
-                        src={`/certificates/${cert.file}`}
-                        type="application/pdf"
-                        className="w-full h-full pointer-events-none"
+                    <div className="aspect-[3/4] bg-muted flex items-center justify-center p-2">
+                      <img
+                        src={`/certificates/${cert.file}_thumb-1.jpg`}
+                        alt={`${cert.label} Certificate`}
+                        className="w-full h-full object-contain rounded-lg"
+                        loading="lazy"
                       />
                     </div>
                     <div className="p-4 text-center">
@@ -176,7 +179,7 @@ const ProductsSection = () => {
                       <span className="text-sm text-muted-foreground">{cert.subtitle}</span>
                     </div>
                   </div>
-                </button>
+                </a>
               ))}
             </div>
           </div>
