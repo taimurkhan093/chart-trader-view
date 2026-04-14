@@ -39,4 +39,12 @@ export const certifications = [
     thumbnailSrc: "/certificates/TAXPAYER-thumb.webp",
     pdfSrc: "/certificates/TAXPAYER-web.pdf",
   },
+  {
+    fileBase: "MEMBERSHIP",
+    label: "MEMBER",
+    subtitle: "Chamber",
+    colorClass: "bg-primary/10 text-primary",
+    thumbnailSrc: "/certificates/MEMBERSHIP-thumb.webp",
+    pdfSrc: "/certificates/MEMBERSHIP-thumb.webp",
+  },
 ] as const;

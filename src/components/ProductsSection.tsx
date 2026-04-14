@@ -149,7 +149,7 @@ const ProductsSection = () => {
             <p className="text-muted-foreground mb-8 max-w-2xl mx-auto">
               Click on any certificate to view the full documentation
             </p>
-            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 max-w-5xl mx-auto">
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6 max-w-6xl mx-auto">
               {certifications.map((cert) => (
                 <a
                   key={cert.fileBase}
